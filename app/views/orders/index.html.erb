@@ -1,0 +1,7 @@
+<h2>All Orders</h2>
+
+<% @orders.each do |order| %>
+  <p>Product: <%= order.product.name %></p>
+  <p>Email: <%= order.user.email %></p>
+  <p>Price: <%= order.product.price %> </p>
+<% end %>

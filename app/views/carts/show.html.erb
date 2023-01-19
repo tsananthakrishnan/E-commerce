@@ -1,0 +1,16 @@
+<h2>Cart show</h2>
+<ul>
+  <% @cart.line_items.each do |line_item| %>
+    <li>Item: <%= line_item.product.name %> </li>
+    <li>Price: <%= number_to_currency(line_item.product.price) %></li>
+    <ul>
+      <li>
+        <%= button_to "Remove item", delete_line_item_url(line_item), method: :post %>
+      </li>
+    </ul>
+  <% end %>
+</ul>
+
+<p>Sub total: <%= number_to_currency(@cart.sub_total) %></p>
+<%= button_to "Proceed to checkout", '/orders' %><br>
+<%= button_to "Empty cart", delete_all_url(@current_cart), method: :post %>

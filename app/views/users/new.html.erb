@@ -1,0 +1,12 @@
+<h1>Sign Up</h1>
+<%= form_for @user do |f|%>
+<div class="form-group col-md-6">  
+<%= f.label :email, "Enter email"%>
+<%= f.email_field :email, :class => "form-control"%>  
+</div>
+<div class="form-group col-md-6">
+<%= f.label :password, "password"%>
+<%= f.password_field :password, :class => "form-control"%>
+</div>  
+<%= f.submit nil, :class => 'btn btn-primary' %>
+<%end%>
